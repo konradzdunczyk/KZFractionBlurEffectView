@@ -15,8 +15,8 @@
 		171DD66B2379681C00700917 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171DD6692379681C00700917 /* SettingsViewController.swift */; };
 		171DD66C2379681C00700917 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 171DD66A2379681C00700917 /* SettingsViewController.xib */; };
 		171DD66E237971E800700917 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171DD66D237971E800700917 /* Styles.swift */; };
-		171DD670237993AD00700917 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171DD66F237993AD00700917 /* SecondViewController.swift */; };
 		171DD6722379968D00700917 /* KZFractionBlurEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171DD6712379968D00700917 /* KZFractionBlurEffectView.swift */; };
+		171DD6742379AF9000700917 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171DD6732379AF9000700917 /* DemoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +30,8 @@
 		171DD6692379681C00700917 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		171DD66A2379681C00700917 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		171DD66D237971E800700917 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
-		171DD66F237993AD00700917 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		171DD6712379968D00700917 /* KZFractionBlurEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KZFractionBlurEffectView.swift; sourceTree = "<group>"; };
+		171DD6732379AF9000700917 /* DemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +66,7 @@
 			children = (
 				171DD6552379620100700917 /* AppDelegate.swift */,
 				171DD6572379620100700917 /* SceneDelegate.swift */,
-				171DD66F237993AD00700917 /* SecondViewController.swift */,
+				171DD6732379AF9000700917 /* DemoViewController.swift */,
 				171DD65B2379620100700917 /* Main.storyboard */,
 				171DD65E2379620200700917 /* Assets.xcassets */,
 				171DD6602379620200700917 /* LaunchScreen.storyboard */,
@@ -151,10 +151,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				171DD670237993AD00700917 /* SecondViewController.swift in Sources */,
 				171DD66E237971E800700917 /* Styles.swift in Sources */,
 				171DD6562379620100700917 /* AppDelegate.swift in Sources */,
 				171DD6582379620100700917 /* SceneDelegate.swift in Sources */,
+				171DD6742379AF9000700917 /* DemoViewController.swift in Sources */,
 				171DD66B2379681C00700917 /* SettingsViewController.swift in Sources */,
 				171DD6722379968D00700917 /* KZFractionBlurEffectView.swift in Sources */,
 			);

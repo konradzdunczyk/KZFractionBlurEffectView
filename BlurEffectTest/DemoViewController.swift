@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  DemoViewController.swift
 //  BlurEffectTest
 //
 //  Created by Konrad Zdunczyk on 11/11/2019.
@@ -8,38 +8,29 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
-    var effectStyle: EffectStyle = EffectStyle.style(for: 0)
-    var blurStyle: BlurEffectStyle = BlurEffectStyle.style(for: 0)
+class DemoViewController: UIViewController {
+    private var effectStyle: EffectStyle = EffectStyle.style(for: 0)
+    private var blurStyle: BlurEffectStyle = BlurEffectStyle.style(for: 0)
 
-    var duration: TimeInterval = 0.3
-    var target: CGFloat = 0.3
-    var manualProgress: CGFloat = 0.0
+    private var duration: TimeInterval = 0.3
+    private var target: CGFloat = 0.3
+    private var manualProgress: CGFloat = 0.0
 
-    var effectView: KZFractionBlurEffectView!
+    private let effectView: KZFractionBlurEffectView = {
+        let v = KZFractionBlurEffectView()
+        v.translatesAutoresizingMaskIntoConstraints = false
+
+        return v
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupDisplayButton()
-        resetEffectView()
+        setupEffectView()
     }
 
-    private func resetEffectView() {
-        effectView?.removeFromSuperview()
-        effectView = nil
-
-        if effectStyle == .hide {
-            return
-        }
-
-        effectView = {
-            let v = KZFractionBlurEffectView(blurStyle: blurStyle.uiKitStyle)
-            v.translatesAutoresizingMaskIntoConstraints = false
-
-            return v
-        }()
-
+    private func setupEffectView() {
         view.addSubview(effectView)
 
         let c = [
@@ -51,7 +42,11 @@ class SecondViewController: UIViewController {
 
         NSLayoutConstraint.activate(c)
 
-        effectView.fractionComplete = manualProgress
+        effectView.blurIntensity = manualProgress
+        effectView.blurStyle = blurStyle.uiKitStyle
+        effectView.isHidden = effectStyle == .hide
+
+        effectView.backgroundColor = .black // no effect
     }
 
     private func setupDisplayButton() {
@@ -77,10 +72,10 @@ class SecondViewController: UIViewController {
     }
 }
 
-extension SecondViewController: SettingsViewControllerDelegate {
+extension DemoViewController: SettingsViewControllerDelegate {
     func settingsViewController(_ vc: SettingsViewController, changedProgress progress: CGFloat) {
         self.manualProgress = progress
-        effectView?.fractionComplete = progress
+        effectView.blurIntensity = progress
     }
 
     func settingsViewController(_ vc: SettingsViewController, changedTarget target: CGFloat) {
@@ -91,20 +86,21 @@ extension SecondViewController: SettingsViewControllerDelegate {
         self.effectStyle = effectStyle
         self.blurStyle = blurStyle
 
-        resetEffectView()
+        effectView.blurStyle = blurStyle.uiKitStyle
+        effectView.isHidden = effectStyle == .hide
     }
 
     func settingsViewControllerBlurIn(_ vc: SettingsViewController) {
-        effectView?.blurIn(to: self.target,
-                           duration: duration)
+        effectView.blurIn(to: target,
+                          duration: duration)
     }
 
     func settingsViewControllerBlurOut(_ vc: SettingsViewController) {
-        effectView?.blurOut(duration: duration)
+        effectView.blurOut(duration: duration)
     }
 }
 
-extension SecondViewController: UIPopoverPresentationControllerDelegate {
+extension DemoViewController: UIPopoverPresentationControllerDelegate {
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
     }
