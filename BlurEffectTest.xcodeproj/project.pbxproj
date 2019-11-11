@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		171DD6562379620100700917 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171DD6552379620100700917 /* AppDelegate.swift */; };
 		171DD6582379620100700917 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171DD6572379620100700917 /* SceneDelegate.swift */; };
-		171DD65A2379620100700917 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171DD6592379620100700917 /* ViewController.swift */; };
 		171DD65D2379620100700917 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 171DD65B2379620100700917 /* Main.storyboard */; };
 		171DD65F2379620200700917 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 171DD65E2379620200700917 /* Assets.xcassets */; };
 		171DD6622379620200700917 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 171DD6602379620200700917 /* LaunchScreen.storyboard */; };
+		171DD66B2379681C00700917 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171DD6692379681C00700917 /* SettingsViewController.swift */; };
+		171DD66C2379681C00700917 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 171DD66A2379681C00700917 /* SettingsViewController.xib */; };
+		171DD66E237971E800700917 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171DD66D237971E800700917 /* Styles.swift */; };
+		171DD670237993AD00700917 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171DD66F237993AD00700917 /* SecondViewController.swift */; };
+		171DD6722379968D00700917 /* KZFractionBlurEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171DD6712379968D00700917 /* KZFractionBlurEffectView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		171DD6522379620100700917 /* BlurEffectTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlurEffectTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		171DD6552379620100700917 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		171DD6572379620100700917 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		171DD6592379620100700917 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		171DD65C2379620100700917 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		171DD65E2379620200700917 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		171DD6612379620200700917 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		171DD6632379620200700917 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		171DD6692379681C00700917 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		171DD66A2379681C00700917 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		171DD66D237971E800700917 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		171DD66F237993AD00700917 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		171DD6712379968D00700917 /* KZFractionBlurEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KZFractionBlurEffectView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +66,15 @@
 			children = (
 				171DD6552379620100700917 /* AppDelegate.swift */,
 				171DD6572379620100700917 /* SceneDelegate.swift */,
-				171DD6592379620100700917 /* ViewController.swift */,
+				171DD66F237993AD00700917 /* SecondViewController.swift */,
 				171DD65B2379620100700917 /* Main.storyboard */,
 				171DD65E2379620200700917 /* Assets.xcassets */,
 				171DD6602379620200700917 /* LaunchScreen.storyboard */,
 				171DD6632379620200700917 /* Info.plist */,
+				171DD6692379681C00700917 /* SettingsViewController.swift */,
+				171DD66A2379681C00700917 /* SettingsViewController.xib */,
+				171DD66D237971E800700917 /* Styles.swift */,
+				171DD6712379968D00700917 /* KZFractionBlurEffectView.swift */,
 			);
 			path = BlurEffectTest;
 			sourceTree = "<group>";
@@ -128,6 +140,7 @@
 				171DD6622379620200700917 /* LaunchScreen.storyboard in Resources */,
 				171DD65F2379620200700917 /* Assets.xcassets in Resources */,
 				171DD65D2379620100700917 /* Main.storyboard in Resources */,
+				171DD66C2379681C00700917 /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +151,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				171DD65A2379620100700917 /* ViewController.swift in Sources */,
+				171DD670237993AD00700917 /* SecondViewController.swift in Sources */,
+				171DD66E237971E800700917 /* Styles.swift in Sources */,
 				171DD6562379620100700917 /* AppDelegate.swift in Sources */,
 				171DD6582379620100700917 /* SceneDelegate.swift in Sources */,
+				171DD66B2379681C00700917 /* SettingsViewController.swift in Sources */,
+				171DD6722379968D00700917 /* KZFractionBlurEffectView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +303,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WM5VQQ9GA7;
 				INFOPLIST_FILE = BlurEffectTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,6 +322,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WM5VQQ9GA7;
 				INFOPLIST_FILE = BlurEffectTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
