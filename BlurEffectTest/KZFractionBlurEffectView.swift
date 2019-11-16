@@ -39,7 +39,7 @@ class KZFractionBlurEffectView: UIView {
     private var target: CGFloat = 0
     private var animator: UIViewPropertyAnimator!
     private let maxFrameRate = CGFloat(UIScreen.main.maximumFramesPerSecond)
-    private lazy var displayLink: CADisplayLink = {
+    private var displayLink: CADisplayLink = {
         let displayLink = CADisplayLink(target: self, selector: #selector(tick))
         displayLink.isPaused = true
         displayLink.add(to: .main, forMode: .common)
@@ -78,11 +78,12 @@ class KZFractionBlurEffectView: UIView {
 
     deinit {
         invalidateAnimator()
+        displayLink.invalidate()
     }
 
     func blurIn(to targetIntensity: CGFloat, duration: TimeInterval = 0.3) {
-        self.target = targetIntensity
-        self.delta = targetIntensity / (maxFrameRate * CGFloat(duration))
+        target = targetIntensity
+        delta = targetIntensity / (maxFrameRate * CGFloat(duration))
 
         animator.fractionComplete = 0.0
 
