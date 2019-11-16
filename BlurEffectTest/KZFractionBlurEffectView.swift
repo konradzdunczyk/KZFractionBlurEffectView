@@ -155,6 +155,7 @@ class KZFractionBlurEffectView: UIView {
                                           animations: { [unowned self] in
                                             self.effectView.effect = UIBlurEffect(style: self.blurStyle)
         })
+        animator.pausesOnCompletion = true
         animator.fractionComplete = fractionComplete
     }
 }
