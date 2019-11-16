@@ -9,12 +9,6 @@
 import UIKit
 
 class KZFractionBlurEffectView: UIView {
-    var animationCurve: UIView.AnimationCurve = .linear {
-        didSet {
-            resetAnimator()
-        }
-    }
-
     var blurStyle: UIBlurEffect.Style = .extraLight {
         didSet {
             resetAnimator()
@@ -62,9 +56,8 @@ class KZFractionBlurEffectView: UIView {
         return delta < 0.0
     }
 
-    init(blurStyle: UIBlurEffect.Style = .extraLight, animationCurve: UIView.AnimationCurve = .linear) {
+    init(blurStyle: UIBlurEffect.Style = .extraLight) {
         self.blurStyle = blurStyle
-        self.animationCurve = animationCurve
 
         super.init(frame: CGRect())
 
@@ -151,7 +144,7 @@ class KZFractionBlurEffectView: UIView {
         invalidateAnimator()
         effectView.effect = nil
         animator = UIViewPropertyAnimator(duration: 1.0,
-                                          curve: animationCurve,
+                                          curve: .linear,
                                           animations: { [unowned self] in
                                             self.effectView.effect = UIBlurEffect(style: self.blurStyle)
         })
